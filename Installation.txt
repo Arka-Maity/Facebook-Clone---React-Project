@@ -1,0 +1,16 @@
+Bootstrap ---- npm install react-bootstrap bootstrap
+
+
+react-router-dom ------ npm install react-router-dom
+
+
+redux ----  npm install @reduxjs/toolkit
+
+
+material ui -- npm install @material-ui/core
+
+
+
+"@material-ui/core": "^4.12.4",
+"@mui/icons-material": "^5.14.12",
+"@mui/styled-engine-sc": "^5.14.12",

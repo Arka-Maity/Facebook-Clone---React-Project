@@ -1,0 +1,120 @@
+.head{
+    padding: 10px;
+    margin: 15px; 
+ 
+  }
+ 
+ .popup {
+     /* Popup styles */
+     position: relative;
+     background: rgba(0, 0, 0, 0.5);
+     width: 100%;
+     height: 400%;
+     top: -30rem;
+     left:-20rem;
+     display: block;
+     z-index: 1;
+     color: #0a0909;
+     background-color: rgb(241, 237, 244);
+      padding:  10px 20px;
+      text-align: center;
+     justify-content: center;
+     align-items: center;
+    
+   }
+   
+   .popup-content {
+     /* Popup content styles */
+     background: whitesmoke;
+     padding: 20px;
+     text-align: center;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     
+   }
+   
+   .close {
+     /* Close button styles */
+     position: absolute;
+     top: 10px;
+     right: 15px;
+     font-size: 24px;
+     cursor: pointer;
+   }
+ 
+   .input-group{
+     display:grid;
+     align-items: center;
+     padding: 12px;
+     
+   }
+   
+   .gender-group h4{
+     /* Input group styles */
+     display: flex;
+     justify-content: space-between;
+ 
+ 
+   }
+   
+   
+   .popup-sel{
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+     text-align: center;
+   }
+   
+   .date-group{
+     padding: 10px;
+     
+   }
+   .date-group label{
+     font-size: 1.3rem;
+   }
+   .date-group select{
+     width: 20%;
+     padding: 5px;
+ }
+   label {
+     /* Radio button and checkbox label styles */
+     margin-right: 10px;
+     font-size: 1.3rem;
+ 
+   }
+   
+   .sign-up-button {
+     /* Sign up button styles */
+     width: 100%;
+     background-color: #1877f2;;
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   .sign-up-button:hover {
+     background-color: rgb(108, 162, 232);
+     color: #0a0909;
+     
+   }
+   
+ 
+   /*
+   input[type="text"],
+   input[type="email"],
+   input[type="password"],
+   select {
+     
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+   }
+   */

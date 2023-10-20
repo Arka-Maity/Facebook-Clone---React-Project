@@ -1,0 +1,146 @@
+body{
+    box-sizing: border-box;
+    background-color: #F0F2F5;
+}
+.login{
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    border-radius: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.facebooktext{
+    padding: 1rem;
+    font-size: 4rem;
+    color:#1877f2;
+    font-weight:bold;
+    
+}
+.t-title{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 450;
+}
+
+.logincontainer{
+
+    border: rgb(245, 216, 216) .5rem solid;
+    background-color: white;
+    height: 20rem;
+    width: 27rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.input-email{
+    cursor: pointer;
+    width: 100%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box; 
+    font-size: 1.3rem;
+    font-weight: 450;
+   
+    &:hover{
+        border: 1px solid #1877f2 ; 
+    }
+
+    
+}
+.input-password{
+    cursor: pointer;
+    width: 100%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box; 
+    font-size: 1.3rem;
+    font-weight: 450;
+    &:hover{
+        border: 1px solid #1877f2 ; 
+    }
+
+}
+
+.btn{
+    cursor: pointer;
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    background-color: #1877f2;
+    border: none;
+    box-sizing: border-box;
+    padding: 15px 32px;
+    justify-content: center;
+    margin: 4px 1px;
+    border-radius: .5rem;
+    color:white;
+    text-decoration: none;
+    font-size: 1.3rem;
+
+    &:hover{
+        color: black;
+        background-color:skyblue;
+    }
+}
+.forget a{
+    color: #1877f2;
+    font-size: small;
+    text-decoration: none;
+   justify-content: center;
+   display: flex;
+   
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#F0F2F5;
+    background-color: #42872A;
+     padding: 15px 32px;
+     text-decoration: none;
+     font-size: 18px;
+     cursor: pointer;
+     width: 60%;
+     border-radius: .5rem;
+     margin-left: 20%;
+     font-weight: 600;
+     &:hover{
+        background-color: lightgreen;
+        
+     }
+
+}
+.page a{
+    
+    font-size: 1.2rem;
+    color: black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+    
+}
+.page{
+  font-size: 1rem;
+  padding-bottom: 10%;
+  margin-left: 10%;
+}
+
+.logindetail{
+    border-bottom: .1rem rgb(0, 0, 0);
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+.btn a:hover{
+    color: black;
+
+}
+ 

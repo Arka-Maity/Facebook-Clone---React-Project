@@ -1,0 +1,10 @@
+.storyReel{
+    display: flex;
+}
+@media (max-width: 768px) {
+
+    .storyReel{
+        position: relative;
+        right: 20%;
+    } 
+}

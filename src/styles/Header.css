@@ -1,0 +1,170 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sectionIcons{
+   font-size: large !important;
+}
+.header{
+  display:flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  background-color:white;
+  z-index: 100;
+  top:0;
+  box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.75);
+  
+}
+
+.header_left{
+    display:flex;
+    justify-content: space-evenly;
+
+}
+.header_input{
+   display: flex;
+   align-items:center;
+   background-color: #eff2f5;
+   padding: 10px;
+   margin-left:10px;
+   border-radius:999px;
+
+}
+
+    
+.header_left > img{
+ height:40px;   
+}
+.header_input > input{
+  border:none;
+  background-color:transparent;
+  outline-width:0;
+}
+.header_center{
+   display:flex;
+   flex: 1;
+   justify-content:center;
+   
+}
+
+.header_option{
+    color:gray;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+}
+
+.header_option:hover{
+  background-color: whitesmoke;
+  border: 10px;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: none;
+  text-decoration: underline;
+}
+.header_option:hover> .MuiSvgIcon-root{
+  color:#2e81f4;
+}
+.header_option--active >.MuiSvgIcon-root{
+  color: #2e81f4;
+}
+.header_option--active{
+  border-bottom: 4px solid #2e81f4;
+}
+
+.header_info{
+  display: flex;
+  align-items:center;
+}
+.header_info > h4{
+  margin-left: 10px;
+}
+.header_right{
+  display:flex;
+}
+
+
+/* Styles for small devices (e.g., smartphones) */
+@media (max-width: 768px) {
+   
+  .header{
+    width: 80%;
+    padding: 30px 20px;
+  }
+  
+ 
+ .header_info{
+  display: flex;
+  align-items: center;
+}
+.header_info > h4{
+  margin-left: 5px;
+  display: none;
+}
+
+ 
+
+  .header_option{
+    display: none; /* Hide center icons for small devices */
+    
+  }
+  
+  
+  .header_right {
+   /* display: none; /* Hide right icons for small devices */
+      position: relative;
+      right: 15%;
+  }
+ 
+}
+
+@media (max-width: 684px) {
+  .header_right {
+    /* display: none; /* Hide right icons for small devices */
+       position: relative;
+       right: 10%;
+   }
+
+}
+@media (max-width: 495px) {
+  .header{
+    padding: 40px 50px;
+
+  }  
+  .header_left{
+    position: relative;
+    right: 12%;
+    margin-top: 2%;
+
+  }
+  .header_input{
+     position: relative; 
+     top: -40px;
+    
+  }
+
+  .header_right {
+    /* display: none; /* Hide right icons for small devices */
+       position: relative;
+       right: 65%;
+       top:15px;  
+   }
+   
+
+}
+
+/* Styles for large devices (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header_input {
+    margin-left: 10px; /* Adjust search bar margin for larger devices */
+  }
+}
+
+/* Styles for extra-large devices (e.g., desktops) */
+@media (min-width: 1025px) {
+  /* .header_option {
+   /* Increase padding for menu items on larger screens */
+  } 

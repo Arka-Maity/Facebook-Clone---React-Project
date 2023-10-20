@@ -1,0 +1,23 @@
+.sbr-sidebarRow{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor:pointer;
+    font-weight:bolder;
+}
+.sbr-sidebarRow:hover{
+    background-color:lightgray;
+    border-radius:10px;
+}
+.sbr-sidebarRow > h4{
+    margin-left: 20px;
+    font-weight: 600;
+}
+.sbr-sidebarRow > .MuiSvgIcon-root{
+    font-size: xx-large ;
+    color: blue;
+}
+.sbr-sidebarRow title{
+    display: none;
+}
+ 
