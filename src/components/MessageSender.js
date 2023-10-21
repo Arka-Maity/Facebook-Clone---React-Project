@@ -4,7 +4,7 @@ import { Avatar } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonOutlinedIcon from "@mui/icons-material/InsertEmoticonOutlined";
-
+import  Createpost from  "./Createpost"
 function MessageSender() {
    const [input,setInput]=useState("");
    const[imageUrl,setImageUrl]=useState("");
@@ -18,6 +18,13 @@ function MessageSender() {
     setImageUrl("");
   };
 
+  const [isPopupVisiblepost, setPopupVisiblepost] = useState(false);
+
+  const togglePopuppost = () => {
+    setPopupVisiblepost(!isPopupVisiblepost);
+  };
+  
+
   return (
     <div className="messageSender">
       <div className="messageSender_top">
@@ -25,19 +32,28 @@ function MessageSender() {
         <form>
           <input
             value={input}
-             onChange={(e)=>setInput(e.target.value)}
+            onClick={togglePopuppost}
+
             className="messageSender_input"
             placeholder="What's on Your Mind"
           />
+          {isPopupVisiblepost && (
+            <Createpost onClose={togglePopuppost} />
+          )}
           <input
            value={input}
-           onChange={(e)=>setImageUrl(e.target.value) }
- 
+           onClick={togglePopuppost}
           placeholder="image URL {Optional}" />
+          {isPopupVisiblepost && (
+            <Createpost onClose={togglePopuppost} />
+          )}
 
-          <button onClick={handleSubmit} type="submit">
+          <button onClick={togglePopuppost} type="submit">
             Hidden Submit
           </button>
+          {isPopupVisiblepost && (
+            <Createpost onClose={togglePopuppost} />
+          )}
         </form>
       </div>
 

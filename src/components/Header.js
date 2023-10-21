@@ -13,22 +13,22 @@ import AddIcon from "@mui/icons-material/Add";
 import ForumIcon from "@mui/icons-material/Forum";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useSelector } from "react-redux";
-// import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
-
+import { useDispatch, useSelector } from "react-redux";
 //import ExpandableButton from "./ExpandableButton";
 //import { ExpandMore } from "@mui/icons-material";
 import  Createpost from  "./Createpost"
+import Createpage  from "./CreatePage";
+import { logout } from "../store/userSlice";
+import Updatepassword from "./Updatepassword";
 
 function Header() {
-  // const history=useHistory();
-  // const navigate = useNavigate();
+
   const [expanded, setExpanded] = useState(false);
   const [menuAnchor, setMenuAnchor] = useState(null);
   const menuRef = useRef(null);
-
-  const [isCreatePostModalOpen, setIsCreatePostModalOpen] = useState(false);
+  const dispatch = useDispatch([]);
+  
+  
   const user = useSelector((store) => store.user.userDetails);
   //console.log(user);
   const [searchText, setsearchText] = useState("");
@@ -72,23 +72,25 @@ function Header() {
 
   const handleLogout = () => {
     // Implement your logout logic here
-    
-      // localStorage.clear();
-      // <Routes>
-      //   navigate('/Login');
-      // </Routes>
+     
+    //alert("boka choda");
+     
+    dispatch(logout());
       
 
     // Redirect to the logout page or perform other logout actions
     handleMenuClose();
   };
 
-  const handleCreatePost = () => {
-    // Implement logic for creating a post here
-    console.log("Creating a post...");
-    // Redirect to the create post page or perform other create post actions
-    handleMenuClose();
-  };
+
+  const handleUpdataPassword=()=>{
+
+  }
+
+  
+  
+  
+  
 
   const openCreatePostModal = () => {
     setIsCreatePostModalOpen(true);
@@ -97,6 +99,23 @@ function Header() {
   const closeCreatePostModal = () => {
     setIsCreatePostModalOpen(false);
   };
+
+  const [isPopupVisiblepost, setPopupVisiblepost] = useState(false);
+  const [isPopupVisiblePage, setPopupVisiblePage] = useState(false);
+
+  const togglePopuppost = () => {
+    setPopupVisiblepost(!isPopupVisiblepost);
+  };
+  const togglePopupPage = () => {
+    setPopupVisiblePage(!isPopupVisiblePage);
+  };
+  
+  const [isPopupVisiblepassword, setPopupVisiblepassword] = useState(false);
+
+  const togglePopuppassword = () => {
+    setPopupVisiblepassword(!isPopupVisiblepassword);
+  };
+
   return (
     <div className="header">
       <div className="header_left">
@@ -169,19 +188,43 @@ function Header() {
         horizontal: "center",
       }}
     >
-      {/* <MenuItem onClick={handleLogout}>
-        <LogoutIcon sx={{ marginLeft: 1 }} />
+      <MenuItem onClick={handleLogout}>
+        <LogoutIcon sx={{ marginRight: 1 }} />
         Logout
-      </MenuItem> */}
-      <MenuItem onClick={handleCreatePost}>
-        <AddIcon sx={{ marginLeft: 1 }} />
+      </MenuItem>
+
+      <MenuItem onClick={togglePopuppassword}>
+        <LogoutIcon sx={{ marginRight: 1 }} />
+        Upadate password
+      </MenuItem>
+      
+      <MenuItem onClick={togglePopuppost} >
+        <AddIcon sx={{ marginRight:1 }} />
         Create a Post
       </MenuItem>
+
+      <MenuItem onClick={togglePopupPage} >
+        <AddIcon sx={{ marginRight:1 }} />
+         Create a page
+      </MenuItem>
     </Menu>
+    {isPopupVisiblepost && (
+      <Createpost onClose={togglePopuppost} />
+    )}
+
+    {isPopupVisiblePage && (
+      <Createpage onClose={togglePopupPage} />
+    )}
+
+    {isPopupVisiblepassword && (
+      <Updatepassword onClose={togglePopuppassword} />
+    )}
+
+     
     
-        
       </div>
     </div>
+    
   );
 }
 

@@ -1,62 +1,80 @@
 import React, { useState } from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  TextField,
-  Button,
-} from "@mui/material";
+import "../styles/Createpost.css";
+import { json } from "react-router-dom";
 
-function Createpost({ open, handleClose }) {
+const CreatePost = ({ onClose }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleCreatePost = () => {
-    // Implement logic for creating a post here
-    console.log("Title:", title);
-    console.log("Content:", content);
-    console.log("Image:", image);
-    // You can send this data to the backend or perform other actions
-    handleClose(); // Close the modal after creating the post
+    // Logic to handle post creation (e.g., API call)
+    // You can use 'title', 'content', and 'image' states here
+    // ...
+    postData();
+    // Close the popup after post creation
+    onClose();
   };
 
-  return (
-    <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Create a Post</DialogTitle>
-      <DialogContent>
-        <TextField
-          fullWidth
-          margin="normal"
-          label="Title"
-          variant="outlined"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <TextField
-          fullWidth
-          margin="normal"
-          label="Post Content"
-          variant="outlined"
-          multiline
-          rows={4}
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <TextField
-          fullWidth
-          margin="normal"
-          label="Image URL"
-          variant="outlined"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
-        <Button variant="contained" color="primary" onClick={handleCreatePost}>
-          Create Post
-        </Button>
-      </DialogContent>
-    </Dialog>
-  );
-}
+  async function postData() {
+    var myHeaders = new Headers();
+    myHeaders.append("ProjectId", "x57qvgem43cn");
+    myHeaders.append(
+      "Authorization",
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmVjY2RmMDRlZDI2ZDBlNzI5NzYyMSIsImlhdCI6MTY5Nzc4OTAxNSwiZXhwIjoxNzI5MzI1MDE1fQ.-hYrb-Tz7bnio8_cjKGpeyag7Qwr-A1Ax3SwmuKvl5s"
+    );
 
-export default Createpost;
+    var formdata = new FormData();
+    formdata.append("titile", title);
+    formdata.append("content", content);
+    formdata.append("images", image, "[PROXY]");
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: formdata,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://academics.newtonschool.co/api/v1/facebook/post/",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
+
+  return (
+    <div className="post_popup">
+      <h2>Create a Post</h2>
+      <span className="close" onClick={onClose}>
+        &times;
+      </span>
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <br></br>
+      <textarea
+        placeholder="Post Content"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
+      <br></br>
+      <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+      <br></br>
+      <button
+        className="post_popup_button"
+        onClick={handleCreatePost}
+        text="Create Post"
+      >
+        POST
+      </button>
+    </div>
+  );
+};
+
+export default CreatePost;

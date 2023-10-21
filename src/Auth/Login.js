@@ -7,11 +7,11 @@ import { Button } from '@mui/material';
 
 function Login() {
   const signIn = () =>{
-    // sign in...
-    // auth.signInWithPopup(provider)
-    // .then(result=>{
-    //     console.log(result)
-    // }).catch(error=> alert(error.message))
+    
+    auth.signInWithPopup(provider)
+    .then(result=>{
+        console.log(result)
+    }).catch(error=> alert(error.message))
   };
 
   return (
