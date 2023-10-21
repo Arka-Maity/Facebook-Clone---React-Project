@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../styles/Createpost.css"
-import { json } from 'react-router-dom';
+// import { json } from 'react-router-dom';
 import "../styles/Createpage.css"
 
 const Createpage = ({ onClose }) => {

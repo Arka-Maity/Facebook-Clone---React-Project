@@ -7,7 +7,7 @@ import FlagIcon from "@mui/icons-material/Flag";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
-import { Avatar, IconButton,Menu, MenuItem, } from "@mui/material";
+import { Avatar, IconButton, Menu, MenuItem } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AddIcon from "@mui/icons-material/Add";
 import ForumIcon from "@mui/icons-material/Forum";
@@ -16,19 +16,17 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useDispatch, useSelector } from "react-redux";
 //import ExpandableButton from "./ExpandableButton";
 //import { ExpandMore } from "@mui/icons-material";
-import  Createpost from  "./Createpost"
-import Createpage  from "./CreatePage";
+import Createpost from "./Createpost";
+import Createpage from "./CreatePage";
 import { logout } from "../store/userSlice";
 import Updatepassword from "./Updatepassword";
 
 function Header() {
-
   const [expanded, setExpanded] = useState(false);
   const [menuAnchor, setMenuAnchor] = useState(null);
   const menuRef = useRef(null);
   const dispatch = useDispatch([]);
-  
-  
+
   const user = useSelector((store) => store.user.userDetails);
   //console.log(user);
   const [searchText, setsearchText] = useState("");
@@ -61,7 +59,6 @@ function Header() {
     }
   }
 
-
   const handleMenuOpen = (event) => {
     setMenuAnchor(event.currentTarget);
   };
@@ -72,33 +69,24 @@ function Header() {
 
   const handleLogout = () => {
     // Implement your logout logic here
-     
+
     //alert("boka choda");
-     
+
     dispatch(logout());
-      
 
     // Redirect to the logout page or perform other logout actions
     handleMenuClose();
   };
 
+  const handleUpdataPassword = () => {};
 
-  const handleUpdataPassword=()=>{
+  // const openCreatePostModal = () => {
+  //   setIsCreatePostModalOpen(true);
+  // };
 
-  }
-
-  
-  
-  
-  
-
-  const openCreatePostModal = () => {
-    setIsCreatePostModalOpen(true);
-  };
-
-  const closeCreatePostModal = () => {
-    setIsCreatePostModalOpen(false);
-  };
+  // const closeCreatePostModal = () => {
+  //   setIsCreatePostModalOpen(false);
+  // };
 
   const [isPopupVisiblepost, setPopupVisiblepost] = useState(false);
   const [isPopupVisiblePage, setPopupVisiblePage] = useState(false);
@@ -109,7 +97,7 @@ function Header() {
   const togglePopupPage = () => {
     setPopupVisiblePage(!isPopupVisiblePage);
   };
-  
+
   const [isPopupVisiblepassword, setPopupVisiblepassword] = useState(false);
 
   const togglePopuppassword = () => {
@@ -162,7 +150,7 @@ function Header() {
           <Avatar className="header_logicon" />
           <h4>{user?.data?.name || user?.data?.user?.name}</h4>
         </div>
-        
+
         <IconButton>
           <ForumIcon />
         </IconButton>
@@ -172,59 +160,51 @@ function Header() {
         </IconButton>
 
         <IconButton ref={menuRef} onClick={handleMenuOpen}>
-        <ExpandMoreIcon />
-      </IconButton>
-      <Menu
-      anchorEl={menuAnchor}
-      open={Boolean(menuAnchor)}
-      onClose={handleMenuClose}
-      anchorReference="anchorEl"
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "center",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "center",
-      }}
-    >
-      <MenuItem onClick={handleLogout}>
-        <LogoutIcon sx={{ marginRight: 1 }} />
-        Logout
-      </MenuItem>
+          <ExpandMoreIcon />
+        </IconButton>
+        <Menu
+          anchorEl={menuAnchor}
+          open={Boolean(menuAnchor)}
+          onClose={handleMenuClose}
+          anchorReference="anchorEl"
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+        >
+          <MenuItem onClick={handleLogout}>
+            <LogoutIcon sx={{ marginRight: 1 }} />
+            Logout
+          </MenuItem>
 
-      <MenuItem onClick={togglePopuppassword}>
-        <LogoutIcon sx={{ marginRight: 1 }} />
-        Upadate password
-      </MenuItem>
-      
-      <MenuItem onClick={togglePopuppost} >
-        <AddIcon sx={{ marginRight:1 }} />
-        Create a Post
-      </MenuItem>
+          <MenuItem onClick={togglePopuppassword}>
+            <LogoutIcon sx={{ marginRight: 1 }} />
+            Upadate password
+          </MenuItem>
 
-      <MenuItem onClick={togglePopupPage} >
-        <AddIcon sx={{ marginRight:1 }} />
-         Create a page
-      </MenuItem>
-    </Menu>
-    {isPopupVisiblepost && (
-      <Createpost onClose={togglePopuppost} />
-    )}
+          <MenuItem onClick={togglePopuppost}>
+            <AddIcon sx={{ marginRight: 1 }} />
+            Create a Post
+          </MenuItem>
 
-    {isPopupVisiblePage && (
-      <Createpage onClose={togglePopupPage} />
-    )}
+          <MenuItem onClick={togglePopupPage}>
+            <AddIcon sx={{ marginRight: 1 }} />
+            Create a page
+          </MenuItem>
+        </Menu>
+        {isPopupVisiblepost && <Createpost onClose={togglePopuppost} />}
 
-    {isPopupVisiblepassword && (
-      <Updatepassword onClose={togglePopuppassword} />
-    )}
+        {isPopupVisiblePage && <Createpage onClose={togglePopupPage} />}
 
-     
-    
+        {isPopupVisiblepassword && (
+          <Updatepassword onClose={togglePopuppassword} />
+        )}
       </div>
     </div>
-    
   );
 }
 

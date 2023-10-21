@@ -143,6 +143,7 @@ body {
   .header_input{
      position: relative; 
      top: -40px;
+     left: 15%;
     
   }
 
@@ -150,10 +151,30 @@ body {
     /* display: none; /* Hide right icons for small devices */
        position: relative;
        right: 65%;
-       top:15px;  
+       top:15px; 
+       right:40%; 
    }
    
 
+}
+@media (max-width: 367px) {
+  .header{
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .header_right {
+    /* display: none; /* Hide right icons for small devices */
+       position: relative;
+       
+       top:15px; 
+       right:40%; 
+   }
+   .header_left{
+    position: relative;
+    left:3%;
+    margin-top: 2%;
+
+  }
 }
 
 /* Styles for large devices (e.g., tablets) */
@@ -165,6 +186,5 @@ body {
 
 /* Styles for extra-large devices (e.g., desktops) */
 @media (min-width: 1025px) {
-  /* .header_option {
-   /* Increase padding for menu items on larger screens */
-  } 
+  
+}

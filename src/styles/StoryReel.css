@@ -8,3 +8,10 @@
         right: 20%;
     } 
 }
+@media (max-width: 495px) {
+    .storyReel{
+        position: relative;
+        right: 25%;
+    } 
+      
+}

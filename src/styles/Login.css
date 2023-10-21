@@ -1,29 +1,29 @@
 
 .login{
-    display: grid;
-    place-items:center;
-    height: 100vh;
-    background-color:white;
+  display: grid;
+  place-items:center;
+  height: 100vh;
+  background-color:white;
 }
 .login > button{
-  width:300px;
-  background-color:rgba(32, 32, 226, 0.753);
-  color: whitesmoke;
-  font-weight: 800;
+width:300px;
+background-color:rgba(32, 32, 226, 0.753);
+color: whitesmoke;
+font-weight: 800;
 }
 
 .login > button:hover{
-  background-color:rgb(136, 42, 224);
-  color: black;
+background-color:rgb(136, 42, 224);
+color: black;
 
 }
 .login> div >img{
-    object-fit: contain;
-    height: 150px;
+  object-fit: contain;
+  height: 150px;
 }
 .login>div{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
 }
 /*2:56:38*/
