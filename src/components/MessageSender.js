@@ -40,13 +40,7 @@ function MessageSender() {
           {isPopupVisiblepost && (
             <Createpost onClose={togglePopuppost} />
           )}
-          <input
-           value={input}
-           onClick={togglePopuppost}
-          placeholder="image URL {Optional}" />
-          {isPopupVisiblepost && (
-            <Createpost onClose={togglePopuppost} />
-          )}
+          
 
           <button onClick={togglePopuppost} type="submit">
             Hidden Submit

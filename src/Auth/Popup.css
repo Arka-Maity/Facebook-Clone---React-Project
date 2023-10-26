@@ -9,13 +9,13 @@
    position: relative;
    background: rgba(0, 0, 0, 0.5);
    width: 100%;
-   height: 400%;
+   height: 100%;
    top: -30rem;
    left:-20rem;
    display: block;
    z-index: 1;
    color: #0a0909;
-   background-color: rgb(241, 237, 244);
+   background-color: rgb(70, 157, 239);
     padding:  10px 20px;
     text-align: center;
    justify-content: center;
@@ -25,7 +25,7 @@
  
  .popup-content {
    /* Popup content styles */
-   background: whitesmoke;
+   background: rgba(245, 245, 245, 0.591);
    padding: 20px;
    text-align: center;
    border-radius: 5px;
@@ -46,6 +46,7 @@
    display:grid;
    align-items: center;
    padding: 12px;
+   border-radius: 25px;
    
  }
  
@@ -104,4 +105,17 @@
  }
  
 
- 
+ /*
+ input[type="text"],
+ input[type="email"],
+ input[type="password"],
+ select {
+   
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+ }
+ */

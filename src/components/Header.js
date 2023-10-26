@@ -27,7 +27,11 @@ function Header() {
   const menuRef = useRef(null);
   const dispatch = useDispatch([]);
 
-  const user = useSelector((store) => store.user.userDetails);
+  const lUser = localStorage.getItem("fblogin");
+  const localUser = JSON.parse(lUser);
+  const user = useSelector((store) => store.user.userDetails || localUser);
+
+
   //console.log(user);
   const [searchText, setsearchText] = useState("");
 
@@ -70,8 +74,7 @@ function Header() {
   const handleLogout = () => {
     // Implement your logout logic here
 
-    //alert("boka choda");
-
+    localStorage.removeItem("fblogin");
     dispatch(logout());
 
     // Redirect to the logout page or perform other logout actions
@@ -80,13 +83,13 @@ function Header() {
 
   const handleUpdataPassword = () => {};
 
-  // const openCreatePostModal = () => {
-  //   setIsCreatePostModalOpen(true);
-  // };
+  const openCreatePostModal = () => {
+    setIsCreatePostModalOpen(true);
+  };
 
-  // const closeCreatePostModal = () => {
-  //   setIsCreatePostModalOpen(false);
-  // };
+  const closeCreatePostModal = () => {
+    setIsCreatePostModalOpen(false);
+  };
 
   const [isPopupVisiblepost, setPopupVisiblepost] = useState(false);
   const [isPopupVisiblePage, setPopupVisiblePage] = useState(false);
