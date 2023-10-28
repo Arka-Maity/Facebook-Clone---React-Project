@@ -15,13 +15,12 @@ function Loginpage() {
     setIsPopupOpen(!isPopupOpen);
   };
   const dispatch = useDispatch([]);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState([]);
 
   const fetchloginData = async () => {
-    try {
+    try{
       var myHeaders = new Headers();
       myHeaders.append("projectId", "x57qvgem43cn");
       myHeaders.append("Content-Type", "application/json");
