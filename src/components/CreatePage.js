@@ -6,7 +6,7 @@ import "../styles/Createpage.css"
 const Createpage = ({ onClose }) => {
   const [pname, setpname] = useState('');
   const [Category, setCategory] = useState('');
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
  
   //
 

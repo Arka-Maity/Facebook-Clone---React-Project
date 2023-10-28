@@ -3,11 +3,11 @@ import "../styles/Login.css"
 import login_logo1  from  "../img/login_logo1.png"
 import login_text from "../img/logo_text.png"
 import { Button } from '@mui/material';
-
+//import {auth , provider} from "../Fire/firebase";
 
 function Login() {
   const signIn = () =>{
-    
+    // sign in...
     auth.signInWithPopup(provider)
     .then(result=>{
         console.log(result)

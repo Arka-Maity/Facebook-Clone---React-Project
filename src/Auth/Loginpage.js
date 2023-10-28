@@ -87,7 +87,7 @@ function Loginpage() {
           <br />
           with the people in your life.
           <h6>
-            Use this for Login email/password newton@12gmail.com or <br></br>if
+            Use this for Login email arka@gmail.com  and password - 12345678 or <br></br>if
             this email is not working then create your Account{" "}
           </h6>
         </div>

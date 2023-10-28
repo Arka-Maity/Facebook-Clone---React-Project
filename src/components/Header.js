@@ -81,15 +81,15 @@ function Header() {
     handleMenuClose();
   };
 
-  const handleUpdataPassword = () => {};
+  // const handleUpdataPassword = () => {};
 
-  const openCreatePostModal = () => {
-    setIsCreatePostModalOpen(true);
-  };
+  // const openCreatePostModal = () => {
+  //   setIsCreatePostModalOpen(true);
+  // };
 
-  const closeCreatePostModal = () => {
-    setIsCreatePostModalOpen(false);
-  };
+  // const closeCreatePostModal = () => {
+  //   setIsCreatePostModalOpen(false);
+  // };
 
   const [isPopupVisiblepost, setPopupVisiblepost] = useState(false);
   const [isPopupVisiblePage, setPopupVisiblePage] = useState(false);
