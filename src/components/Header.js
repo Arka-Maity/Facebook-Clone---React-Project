@@ -76,7 +76,7 @@ function Header() {
 
     localStorage.removeItem("fblogin");
     dispatch(logout());
-
+    window.location.reload();
     // Redirect to the logout page or perform other logout actions
     handleMenuClose();
   };

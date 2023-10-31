@@ -12,7 +12,7 @@ function Loginpage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   //const navigate = useNavigate();
   const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen);
+    setIsPopupOpen(!isPopupOpen);//pop up for create account
   };
   const dispatch = useDispatch([]);
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ function Loginpage() {
   const [data, setData] = useState([]);
 
   const fetchloginData = async () => {
-    try{
+    try {
       var myHeaders = new Headers();
       myHeaders.append("projectId", "x57qvgem43cn");
       myHeaders.append("Content-Type", "application/json");
@@ -69,7 +69,7 @@ function Loginpage() {
     fetchloginData();
     // console.log(data);
   }
-
+  //update password
   const [isPopupVisiblepassword, setPopupVisiblepassword] = useState(false);
 
   const togglePopuppassword = () => {
@@ -86,13 +86,14 @@ function Loginpage() {
           <br />
           with the people in your life.
           <h6>
-            Use this for Login email arka@gmail.com  and password - 12345678 or <br></br>if
-            this email is not working then create your Account{" "}
+            Use this for Login email arka@gmail.com and password - 12345678 or{" "}
+            <br></br>if this email is not working then create your Account{" "}
           </h6>
         </div>
       </div>
       <div className="logincontainer">
-        <div className="logindetail" onClick={(e) => e.preventDefault()}>
+        <div className="logindetail" onClick={(e) => e.preventDefault()}> 
+         {/* to stop to redirect to log in page after refreshing.. */}
           <input
             type="email"
             value={email}
